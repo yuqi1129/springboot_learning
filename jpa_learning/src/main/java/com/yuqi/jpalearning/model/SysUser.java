@@ -1,12 +1,15 @@
 package com.yuqi.jpalearning.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
-import lombok.Data;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author yuqi
@@ -14,9 +17,9 @@ import lombok.Data;
  * @description
  * @time 14/10/19 16:46
  **/
-@Data
 @TableName(value = "sys_user")
-public class SysUser {
+@XmlRootElement
+public class SysUser implements Serializable {
     private static final long serialVersionUID = 1L;
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
@@ -62,6 +65,63 @@ public class SysUser {
      */
     @TableField(value = "delete_status")
     private String deleteStatus;
+
+
+    public SysUser(Integer id, String username, String password,
+                   String nickname, Integer roleId, Date createTime,
+                   Date updateTime, String deleteStatus) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.roleId = roleId;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.deleteStatus = deleteStatus;
+    }
+
+    public SysUser() {
+    }
+
+    @XmlElement
+    public Integer getId() {
+        return id;
+    }
+
+    @XmlElement
+    public String getUsername() {
+        return username;
+    }
+
+    @XmlElement
+    public String getPassword() {
+        return password;
+    }
+
+    @XmlElement
+    public String getNickname() {
+        return nickname;
+    }
+
+    @XmlElement
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    @XmlElement
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    @XmlElement
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    @XmlElement
+    public String getDeleteStatus() {
+        return deleteStatus;
+    }
 
     public static final String COL_ID = "id";
 
