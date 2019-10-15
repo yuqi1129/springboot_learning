@@ -79,6 +79,13 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-http</artifactId>
         </dependency>
+
+       <!--  support freemarker      -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

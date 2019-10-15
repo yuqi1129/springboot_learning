@@ -35,6 +35,6 @@ public class IpAndMessageInterceptor extends HandlerInterceptorAdapter {
         log.info("Remote ip = {}, request method = {}, took = {}ms",
                 request.getRemoteHost(),
                 request.getMethod(),
-                (System.nanoTime() - (Long) request.getAttribute(BEGINTIME_KEY)) / 1000_000);
+                (System.nanoTime() - (Long) request.getAttribute(BEGINTIME_KEY)) / 1000000);
     }
 }

@@ -8,6 +8,11 @@ spring:
     database: MySQL
     show-sql: true
 
+  freemarker:
+    template-loader-path: classpath:/templates
+  mvc:
+    static-path-pattern: /static/**
+
 
 
 # 这个是为了解决 Invalid bound statement (not found): com.yuqi.jpalearning.mapper.SysUserMapper.getAll
