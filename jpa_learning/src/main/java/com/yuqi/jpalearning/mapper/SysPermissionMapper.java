@@ -1,7 +1,10 @@
 package com.yuqi.jpalearning.mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.yuqi.jpalearning.model.SysPermission;
+
+import java.util.List;
 
 /**
  * @author yuqi
@@ -10,4 +13,6 @@ import com.yuqi.jpalearning.model.SysPermission;
  * @time 15/10/19 10:08
  **/
 public interface SysPermissionMapper extends BaseMapper<SysPermission> {
+
+    List<SysPermission> getAll();
 }

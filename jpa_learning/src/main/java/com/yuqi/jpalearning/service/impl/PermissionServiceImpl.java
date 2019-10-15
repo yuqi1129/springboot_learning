@@ -6,6 +6,8 @@ import com.yuqi.jpalearning.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author yuqi
  * @mail yuqi5@xiaomi.com
@@ -22,4 +24,10 @@ public class PermissionServiceImpl implements PermissionService {
     public void savePermission(SysPermission permission) {
         mapper.insert(permission);
     }
+
+    public List<SysPermission> getAll() {
+        return mapper.getAll();
+    }
+
 }
+
